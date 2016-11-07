@@ -1,9 +1,4 @@
 
-
-//missing dependencies from
-// "serve-favicon"   : "2.1.5",
-//     "serve-static"    : "1.6.3"
-
 var app = express();
 var routes = require('./routes');
 
