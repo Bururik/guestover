@@ -1,0 +1,29 @@
+{
+  "name": "guestover",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bururik/guestover.git"
+  },
+  "author": "Leonardo I. Escandon Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bururik/guestover/issues"
+  },
+  "homepage": "https://github.com/Bururik/guestover#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "ejs-locals": "^1.0.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.6",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.11.0"
+  }
+}
