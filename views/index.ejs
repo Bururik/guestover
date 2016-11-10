@@ -1,0 +1,18 @@
+<% layout( 'layout' ) -%>
+
+<h1 id="main-header"><%= title %></h1>
+
+<form action="/create" method="post" accept-charset="utf-8">
+    <input type="text" name="message" />
+</form>
+
+<% blam.forEach( function( duh ){ %>
+    <p>
+        <span>
+            <a href="/edit/<%= duh._id %>" title="Update this item"><%= duh.message %></a>
+        </span>
+        <span>
+            <a href='/destroy/<%= duh._id %>' title='Delete this item'>Delete</a>
+        </span>
+    </p>
+<% }); %>
