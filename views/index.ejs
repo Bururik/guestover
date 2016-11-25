@@ -6,10 +6,12 @@
     <input type="text" name="message" />
 </form>
 
-<% blam.forEach( function( duh ){ %>
+<% blam.forEach(( duh ) => { %>
     <p>
         <span>
-            <a href="/edit/<%= duh._id %>" title="Update this item"><%= duh.message %></a>
+            <a href="/edit/<%= duh._id %>" title="Update this item">
+                <%= duh.message %>
+            </a>
         </span>
         <span>
             <a href='/destroy/<%= duh._id %>' title='Delete this item'>Delete</a>
