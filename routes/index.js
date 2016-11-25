@@ -18,7 +18,7 @@ exports.index = ( req, res, next ) => {
 exports.create = ( req, res ) => {
   new stuff({
     message    : req.body.message,
-    updated_at : Date.now()
+    date : Date.now()
    })
     .save(( err, duh, count ) => {
         res.redirect( '/' );
@@ -49,7 +49,7 @@ exports.edit = ( req, res ) => {
 exports.update = ( req, res ) => {
   stuff.findById( req.params.id, ( err, duh ) => {
     duh.message    = req.body.message;
-    duh.updated_at = Date.now();
+    duh.date = Date.now();
     duh.save( ( err, todo, count ) => {
       res.redirect( '/' );
     });
