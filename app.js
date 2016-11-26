@@ -1,5 +1,5 @@
 require('./models/guestposts')
-
+//require('./config/passport')(passport);
 
 var port = process.env.PORT || 5050;
 var express = require('express');
@@ -12,8 +12,11 @@ var morgan = require('morgan');
 var errorhandler = require('errorhandler');
 var http = require('http');
 var path = require('path');
+//var passport = require('passport');
+var conflash = require('connect-flash');
+var exsession = require('express-session');
 
-var routes = require('./routes');
+var routes = require('./routes')/*(routes, passport)*/;
 
 app.engine('ejs',engine);
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +29,11 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended : true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(exsession({ secret: 'ohmygodthisisamazballslookatthem' }));
+app.use(passport.initialize());
+app.use(passport.exsession());
+app.use(flash());
 
 mongoose.connect('mongodb://127.0.0.1:27017/guestover');
 
