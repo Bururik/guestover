@@ -2,6 +2,9 @@
 
 <h1 id="page-title"><%= title %></h1>
 
+<div class="page-header text-center">
+  <a href="/profile" class="btn btn-default btn-sm">Back to profile</a>
+</div>
 
 <div id="list">
   <form action="/create" method="post" accept-charset="utf-8">
@@ -9,6 +12,8 @@
       <input class="input" type="text" name="message" />
     </div>
   </form>
+
+
 
   <% blam.forEach(( duh ) => { %>
     <div class="item">

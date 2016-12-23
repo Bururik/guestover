@@ -1,6 +1,6 @@
 require('./models/guestposts');
 
-var port = process.env.PORT || 5050;
+var port = process.env.PORT || 8080;
 var express = require('express');
 var app = express();
 var engine = require('ejs-locals');
@@ -17,7 +17,8 @@ var session = require('express-session');
 
 var routes = require('./routes')/*(routes, passport)*/;
 
-mongoose.connect('mongodb://127.0.0.1:27017/guestover');
+var db = process.env.MONGO_URI || 'mongodb://localhost/givitapp';
+mongoose.connect(db);
 require('./config/passport')(passport);
 
 app.engine('ejs',engine);

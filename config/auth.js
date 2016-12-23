@@ -4,15 +4,15 @@
 module.exports = {
 
 	'twitterAuth' : {
-		'consumerKey' 		: 'your-consumer-key-here',
-		'consumerSecret' 	: 'your-client-secret-here',
+		'consumerKey' 		: 'process.env.TID',
+		'consumerSecret' 	: 'process.env.TSECRET',
 		'callbackURL' 		: 'http://127.0.0.1:8080/auth/twitter/callback'
 	},
 
 	'googleAuth' : {
-		'clientID' 		: '',
-		'clientSecret' 	: '',
-		'callbackURL' 	: 'http://localhost:8080/auth/google/callback'
+		'clientID' 		: 'process.env.GID',
+		'clientSecret' 	: 'process.env.GSECRET',
+		'callbackURL' 	: 'http://localhost:5050/auth/google/callback'
 	}
 
 };
