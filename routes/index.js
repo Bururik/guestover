@@ -2,14 +2,16 @@ var mongoose = require('mongoose');
 var stuff = mongoose.model('Usr');
 
 
+
 exports.main = ( req, res, next ) => {
+
    stuff.
        find().
        sort('-date').
        exec(( err, blam, count ) => {
 
          res.render( 'main', {
-           title : "Bonjour, c'est un titre rouge",
+           title : "Guestbook",
            blam : blam
          });
    });

@@ -1,5 +1,4 @@
-require('./models/guestposts')
-
+require('./models/guestposts');
 
 var port = process.env.PORT || 5050;
 var express = require('express');
