@@ -2,13 +2,13 @@ var mongoose = require('mongoose');
 var stuff = mongoose.model('Usr');
 
 
-exports.index = ( req, res, next ) => {
+exports.main = ( req, res, next ) => {
    stuff.
        find().
        sort('-date').
        exec(( err, blam, count ) => {
 
-         res.render( 'index', {
+         res.render( 'main', {
            title : "Bonjour, c'est un titre rouge",
            blam : blam
          });
@@ -21,14 +21,14 @@ exports.create = ( req, res ) => {
     updated_at : Date.now()
    })
     .save(( err, duh, count ) => {
-        res.redirect( '/' );
+        res.redirect( '/main' );
       });
 };
 
 exports.destroy = ( req, res ) => {
   stuff.findById( req.params.id, ( err, duh ) => {
     duh.remove( ( err, duh ) => {
-      res.redirect( '/' );
+      res.redirect( '/main' );
     });
   });
 };
@@ -51,7 +51,7 @@ exports.update = ( req, res ) => {
     duh.message    = req.body.message;
     duh.updated_at = Date.now();
     duh.save( ( err, todo, count ) => {
-      res.redirect( '/' );
+      res.redirect( '/main' );
     });
   });
 };

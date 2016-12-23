@@ -1,23 +1,39 @@
 <% layout( 'layout' ) -%>
 
-        <h1><%= title %></h1>
-        <form action="/create" method="post" accept-charset="utf-8">
-          <input type="text" name="message" />
-        </form>
+<h1 id="page-title"><%= title %></h1>
 
-        <% blam.forEach( function( duh ){ %>
-          <p>
-            <span>
-              <% if( duh._id == current ){ %>
-              <form action="/update/<%= duh._id %>" method="post" accept-charset="utf-8">
-                <input type="text" name="message" value="<%= duh.message %>" />
-              </form>
-              <% }else{ %>
-                <a href="/edit/<%= duh._id %>" title="Update this item"><%= duh.message %></a>
-              <% } %>
-            </span>
-            <span>
-              <a href="/destroy/<%= duh._id %>" title="Delete this item">Delete</a>
-            </span>
-          </p>
-        <% }); %>
+
+<div id="list">
+  <form action="/create" method="post" accept-charset="utf-8">
+    <div class="item-new">
+      <input class="input" type="text" name="message" />
+    </div>
+  </form>
+
+  <% blam.forEach((duh) => { %>
+
+    <% if( duh._id == current ){ %>
+      <div class="item-new">
+    <% }else{ %>
+      <div class="item">
+    <% } %>
+
+    <% if( duh._id == current ){ %>
+        <form class="update-form" action="/update/<%= duh._id %>" method="post" accept-charset="utf-8">
+          <input class="update-input" type="text" name="message" value="<%= duh.message %>" />
+        </form>
+    <% }else{ %>
+      <a class="update-link" href="/edit/<%= duh._id %>" title="Update this item">
+        <%= duh.message %>
+      </a>
+    <% } %>
+
+    <% if( duh._id == current ){ %>
+      <a class="del-btn-edit"href="/destroy/<%= duh._id %>" title="Delete this item">Delete</a>
+    <% }else{ %>
+      <a class="del-btn"href="/destroy/<%= duh._id %>" title="Delete this item">Delete</a>
+    <% } %>
+      </div>
+  <% }); %>
+
+</div>
