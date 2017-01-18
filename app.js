@@ -15,9 +15,9 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var session = require('express-session');
 
-var routes = require('./routes')/*(routes, passport)*/;
+var routes = require('./routes');
 
-var db = process.env.MONGO_URI || 'mongodb://localhost/givitapp';
+var db = process.env.MONGO_URI || 'mongodb://localhost/guestover';
 mongoose.connect(db);
 require('./config/passport')(passport);
 
